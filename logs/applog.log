@@ -1,0 +1,15 @@
+2020-12-10 00:40:30,212 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting SamplecrudApplication using Java 1.8.0_60 on arrizaqu-pc with PID 4516 (H:\ProjectTest\projectcode\samplecrud\target\classes started by arrizaqu in H:\ProjectTest\projectcode\samplecrud)
+2020-12-10 00:40:30,213 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.4.0, Spring v5.3.1
+2020-12-10 00:40:30,214 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-12-10 00:40:30,941 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-10 00:40:31,024 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SamplecrudApplication in 0.889 seconds (JVM running for 80.721)
+2020-12-10 00:41:32,407 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting SamplecrudApplication using Java 1.8.0_60 on arrizaqu-pc with PID 4516 (H:\ProjectTest\projectcode\samplecrud\target\classes started by arrizaqu in H:\ProjectTest\projectcode\samplecrud)
+2020-12-10 00:41:32,407 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.4.0, Spring v5.3.1
+2020-12-10 00:41:32,407 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-12-10 00:41:33,092 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-10 00:41:33,203 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SamplecrudApplication in 0.826 seconds (JVM running for 142.9)
+2020-12-10 00:55:38,573 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting SamplecrudApplication using Java 1.8.0_60 on arrizaqu-pc with PID 4516 (H:\ProjectTest\projectcode\samplecrud\target\classes started by arrizaqu in H:\ProjectTest\projectcode\samplecrud)
+2020-12-10 00:55:38,573 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.4.0, Spring v5.3.1
+2020-12-10 00:55:38,573 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-12-10 00:55:39,216 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-10 00:55:39,288 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SamplecrudApplication in 0.736 seconds (JVM running for 988.985)

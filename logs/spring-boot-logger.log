@@ -1,0 +1,6 @@
+2020-12-10 01:12:11,613 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-2] execute view employee datatable
+2020-12-10 01:12:50,125 TRACE com.arrizaqu.samplecrud.service.EmployeeService [http-nio-8080-exec-3] execute method save() for new employee
+2020-12-10 01:12:50,145 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-3] employee successfully saved sofi
+2020-12-10 01:12:50,165 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-4] execute view employee datatable
+2020-12-10 01:13:02,074 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-5] employee successfully deleted for id : 9
+2020-12-10 01:13:02,094 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-6] execute view employee datatable

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.22/datatables.min.css"/>
+<style>
+#content{
+	margin-top: 50px;
+	margin-bottom: 50px;
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid silver;
+	padding: 10px;
+}
+#div-table{
+	border: 1px solid #fff;
+	margin-top: 50px;
+}
+#data-entry{
+	border: 1px solid #00ff373d;
+	padding: 10px;
+}
+</style>
+<script type="text/javascript" src="http://118.97.50.100/simpeg/WEB-INF/lib/DataTables-1.10.6/media/js/jquery.js"></script>
+<script type="text/javascript" src="http://118.97.50.100/simpeg/WEB-INF/lib/DataTables-1.10.6/media/js/jquery.dataTables.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="container">
+	<div id="content">
+		<div id="data-entry">
+		<h3>Add Employee</h3>
+			<form id="form-employee">
+			<div class="form-group">
+			    <label for="textName">Name</label>
+			    <input type="text" class="form-control" id="textName" placeholder="full name">
+			  </div>
+			  <div class="form-group">
+			    <label for="textEmail">Email</label>
+			    <input type="email" class="form-control" id="textEmail" aria-describedby="emailHelp" placeholder="valid email">
+			    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+			  </div>
+			  <div class="form-group">
+			    <label for="textAddress">Address</label>
+			    <textarea type="text" class="form-control" id="textAddress" placeholder="valid address"></textarea>
+			  </div>
+			  <div class="form-group">
+			    <label for="textPos">Position</label>
+			    <select class="form-control" id="textPos">
+				    <option value="0">-- select position --</option>
+				    <option th:each="position : ${positions}" th:value="${position.id}" th:text="${position.name}"></option>
+			    </select>
+			  </div>
+			  <button type="submit" id='btn-save-employee' class="btn btn-primary">Add</button>
+			</form>
+		</div>
+		<div id="div-table">
+		<h3>Employee Datatable</h3>
+			<table id="example" class="display" style="width:100%">
+		        <thead>
+		            <tr>
+		                <th>Name</th>
+		                <th>Email</th>
+		                <th>Address</th>
+		                <th>Position</th>
+		                <th>Action</th>
+		            </tr>
+		        </thead>
+		    </table>
+		</div>
+	</div>
+	<!-- Modal EDIT -->
+	<div class="modal fade" id="modal-edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+		  <div class="modal-content">
+		    <div class="modal-header">
+		      <h5 class="modal-title" id="exampleModalLabel">Training for Employee</h5>
+		      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		        <span aria-hidden="true">&times;</span>
+		      </button>
+		    </div>
+		    <div class="modal-body">
+		    	<div id="div-edit-employee">
+		    		<form id="form-employee-e">
+						<div class="form-group">
+							<input type='hidden' id="id-employee-e" />
+						    <label for="textNameE">Name</label>
+						    <input type="text" class="form-control" id="textNameE" placeholder="full name">
+						  </div>
+						  <div class="form-group">
+						    <label for="textEmailE">Email</label>
+						    <input type="email" class="form-control" id="textEmailE" aria-describedby="emailHelp" placeholder="valid email">
+						    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+						  </div>
+						  <div class="form-group">
+						    <label for="textAddressE">Address</label>
+						    <textarea type="text" class="form-control" id="textAddressE" placeholder="valid address"></textarea>
+						  </div>
+						  <div class="form-group">
+						    <label for="textPosE">Position</label>
+						    <select class="form-control" id="textPosE">
+							    <option value="0">-- select position --</option>
+							    <option th:each="position : ${positions}" th:value="${position.id}" th:text="${position.name}"></option>
+						    </select>
+						  </div>
+						  <button type="submit" id='btn-save-employeeE' class="btn btn-primary">Update Employee</button>
+					</form>
+		    	</div>
+		    </div>
+		    <div class="modal-footer">
+		      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		    </div>
+		  </div>
+		</div>
+	</div>
+	<!-- Modal -->
+	<div class="modal fade" id="modal-assets" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+		  <div class="modal-content">
+		    <div class="modal-header">
+		      <h5 class="modal-title" id="exampleModalLabel">Training for Employee</h5>
+		      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		        <span aria-hidden="true">&times;</span>
+		      </button>
+		    </div>
+		    <div class="modal-body">
+		    	<div id="div-training-employee">
+		    		<form id="form-training-employee">
+						  <div class="form-group">
+						    <label for="textPos">Training</label>
+						    <input type="hidden" id="update-id-employee" />
+						    <select class="form-control" id="idTraining">
+							    <option value="0">-- select training --</option>
+							    <option th:each="training : ${trainings}" th:value="${training.id}" th:text="${training.title}"></option>
+						    </select>
+						  </div>
+						  <button type="submit" id='btn-save-employee-training' class="btn btn-primary">Add Training</button>
+						</form>
+		    	</div>
+		    	<p>
+		      <table id="dt-training" class="display" style="width:100%">
+		        <thead>
+		            <tr>
+		                <th>Title</th>
+		                <th>Description</th>
+		                <th>place</th>
+		            </tr>
+		        </thead>
+		    </table>
+		    </div>
+		    <div class="modal-footer">
+		      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		    </div>
+		  </div>
+		</div>
+	</div>
+</div>
+</body>
+<script type="text/javascript">
+$(document).ready(function() {
+	var dtTraining = $('#dt-training').DataTable({
+		"searching": false,
+		"processing": true,
+		columns: [
+            { "data": "title"},
+            { "data": "description"},
+            { "data": "place"}
+        ]
+	});
+	
+	$('#btn-save-employee').click(function(e){
+		e.preventDefault();
+		saveEmployee();	
+	});
+	
+	//btn-save-employeeE
+	$('#btn-save-employeeE').click(function(e){
+		e.preventDefault();
+		saveEmployeeEdit();	
+	});
+	
+	$('#btn-save-employee-training').click(function(e){
+		e.preventDefault();
+		saveEmployeeTraining();
+	});
+	
+	$(document).on('click', '.btn-view-assets', function(){
+		var id = $(this).attr('data-id');
+		updateTableTraining(id);
+		$('#update-id-employee').val(id);
+		$('#modal-assets').modal();
+	});
+	
+	$(document).on('click', '.btn-del-employee', function(){
+		var conf = confirm("are you sure delete this data ?");
+		var id = $(this).attr('data-id');
+		if(!conf){
+			return false;
+		}
+		deleteEmployeeById(id);
+	});
+	
+	$(document).on('click', '.btn-view-edit', function(){
+		var id = $(this).attr('data-id');
+		$('#id-employee-e').val(id);
+		$.ajax({
+			url: '/data-employee/findbyid/'+id,
+			type: 'GET',
+			success: function(data){
+				$('#textNameE').val(data.name);
+	  			$('#textAddressE').val(data.address);
+	  			$('#textEmailE').val(data.email);
+	  			$('#textPosE').val(data.position.id);
+			}
+		});
+		$('#modal-edit').modal();
+	});
+	
+    $('#example').DataTable( {
+        "processing": true,
+        "serverSide": true,
+        "ajax": {
+        	"url" : "/data-employee",
+        	"type": "POST",
+        	"contentType": 'application/x-www-form-urlencoded',
+        	"data": function(data) {
+                planify(data);  
+            }
+        },
+        columns: [
+            { "data": "name", "orderable": true },
+            { "data": "email", "orderable": true },
+            { "data": "address", "orderable": true },
+            { "data": null, render: function(data, type, row){
+            	return data.position.name;
+            }, "orderable": false },
+            { "data": null, render: function(data, type, row){
+            	var action = "<a data-id='"+data.id+"' class='btn btn-warning btn-sm btn-view-edit' href='#'><i class='fas fa-list'></i> Edit</a> | ";
+            	action += "<a data-id='"+data.id+"' class='btn btn-danger btn-sm btn-del-employee' href='#'><i class='fas fa-list'></i> Delete</a> | ";
+            	action += "<a data-id='"+data.id+"' class='btn btn-info btn-sm btn-view-assets' href='#'><i class='fas fa-list'></i> show training</a>";
+                return action;
+             }, "orderable": false},
+        ]
+    } );
+    
+    function updateTableTraining(id){
+    	var url = '/data-employee/findtrainingbyemp/'+id;
+		$.ajax({
+			url: url,
+			type: 'GET',
+			success: function(data){
+				dtTraining.clear();
+				dtTraining.rows.add(data);
+				dtTraining.draw();
+			}
+		});
+    }
+    
+    function planify(data) {
+        for (var i = 0; i < data.columns.length; i++) {
+            column = data.columns[i];
+            column.searchRegex = column.search.regex;
+            column.searchValue = column.search.value;
+            delete(column.search);
+        }
+    }
+    
+  	function saveEmployee(){
+  		var employee = {
+  			name: $('#textName').val(),
+  			address: $('#textAddress').val(),
+  			email: $('#textEmail').val(),
+  			position: {
+  				id : $('#textPos').val()
+  			}
+  		}
+  		
+  		$.ajax({
+  			url: '/data-employee/save',
+  			type: 'POST',
+  			contentType: 'application/json',
+  			data: JSON.stringify(employee),
+  			success: function(data){
+  				$('#form-employee').trigger('reset');
+  				$('#example').DataTable().ajax.reload();	
+  			}
+  		});
+  	}
+  	
+  	//saveEmployeeEdit
+  	function saveEmployeeEdit(){
+  		var employee = {
+  			id: $('#id-employee-e').val(),
+  			name: $('#textNameE').val(),
+  			address: $('#textAddressE').val(),
+  			email: $('#textEmailE').val(),
+  			position: {
+  				id : $('#textPosE').val()
+  			}
+  		}
+  		
+  		$.ajax({
+  			url: '/data-employee/save-edit',
+  			type: 'POST',
+  			contentType: 'application/json',
+  			data: JSON.stringify(employee),
+  			success: function(data){
+  				$('#form-employee').trigger('reset');
+  				$('#example').DataTable().ajax.reload();	
+  			}
+  		});
+  	}
+  	
+  	function saveEmployeeTraining(){	
+  		var id = $('#update-id-employee').val();
+		var training_id =  $('#idTraining').val();
+		
+		$.ajax({
+  			url: '/data-employee/savetraining',
+  			type: 'POST',
+  			data: {
+  				employee_id : id,
+  				training_id : training_id
+  			},
+  			success: function(data){
+  				$('#form-employee-training').trigger('reset');
+  				updateTableTraining(id);
+  			}
+  		}); 
+  	}
+  	
+  	function deleteEmployeeById(id){
+		$.ajax({
+  			url: '/data-employee/delete/'+id,
+  			type: 'GET',
+  			success: function(data){
+  				$('#example').DataTable().ajax.reload();
+  			}
+  		}); 
+  	}
+} );
+</script>
+</html>
