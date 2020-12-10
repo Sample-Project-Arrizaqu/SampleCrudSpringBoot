@@ -4,3 +4,316 @@
 2020-12-10 01:12:50,165 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-4] execute view employee datatable
 2020-12-10 01:13:02,074 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-5] employee successfully deleted for id : 9
 2020-12-10 01:13:02,094 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-6] execute view employee datatable
+2020-12-10 12:20:01,155 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting SamplecrudApplication using Java 1.8.0_60 on arrizaqu-pc with PID 15536 (H:\ProjectTest\projectcode\samplecrud\target\classes started by arrizaqu in H:\ProjectTest\projectcode\samplecrud)
+2020-12-10 12:20:01,195 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.4.0, Spring v5.3.1
+2020-12-10 12:20:01,196 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-12-10 12:20:06,217 ERROR com.zaxxer.hikari.pool.HikariPool [task-1] HikariPool-1 - Exception during pool initialization.
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:358)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:477)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:560)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:176)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:118)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1224)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1255)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:144)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+	... 33 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:155)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
+	... 36 common frames omitted
+2020-12-10 12:20:06,219 WARN org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator [task-1] HHH000342: Could not obtain connection to query metadata
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:358)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:477)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:560)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:176)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:118)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1224)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1255)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:144)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+	... 33 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:155)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
+	... 36 common frames omitted
+2020-12-10 12:20:06,222 WARN org.springframework.context.support.AbstractApplicationContext [restartedMain] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'initDb': Invocation of init method failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'trainingRepository' defined in com.arrizaqu.samplecrud.repo.TrainingRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaMappingContext' while setting bean property 'mappingContext'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jpaMappingContext': Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+2020-12-10 12:20:06,222 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [restartedMain] Invocation of destroy method failed on bean with name 'entityManagerFactory': org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+2020-12-10 12:20:06,265 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'initDb': Invocation of init method failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'trainingRepository' defined in com.arrizaqu.samplecrud.repo.TrainingRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaMappingContext' while setting bean property 'mappingContext'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jpaMappingContext': Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:160)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:429)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1780)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:609)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:925)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:588)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1309)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1298)
+	at com.arrizaqu.samplecrud.SamplecrudApplication.main(SamplecrudApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'trainingRepository' defined in com.arrizaqu.samplecrud.repo.TrainingRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaMappingContext' while setting bean property 'mappingContext'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jpaMappingContext': Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:342)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:113)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1691)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1436)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:608)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1367)
+	at org.springframework.context.annotation.ContextAnnotationAutowireCandidateResolver$1.getTarget(ContextAnnotationAutowireCandidateResolver.java:95)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:195)
+	at com.sun.proxy.$Proxy69.saveAll(Unknown Source)
+	at com.arrizaqu.samplecrud.service.InitDb.saveDataEmployee(InitDb.java:89)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:333)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:157)
+	... 24 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jpaMappingContext': Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:609)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:330)
+	... 46 common frames omitted
+Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:275)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:176)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:118)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1224)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1255)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:100)
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:54)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:137)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	... 17 common frames omitted
+2020-12-10 12:25:19,708 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting SamplecrudApplication using Java 1.8.0_60 on arrizaqu-pc with PID 10688 (H:\ProjectTest\projectcode\samplecrud\target\classes started by arrizaqu in H:\ProjectTest\projectcode\samplecrud)
+2020-12-10 12:25:19,710 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.4.0, Spring v5.3.1
+2020-12-10 12:25:19,710 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-12-10 12:25:22,428 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-10 12:25:22,700 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SamplecrudApplication in 3.237 seconds (JVM running for 4.336)
+2020-12-10 12:25:38,010 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-2] execute view employee datatable
+2020-12-10 12:25:38,109 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-4] execute view employee datatable
+2020-12-10 12:25:47,137 TRACE com.arrizaqu.samplecrud.service.EmployeeService [http-nio-8080-exec-7] execute method edit() for new employee
+2020-12-10 12:25:47,150 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-7] employee successfully edited Masyda Arrizaqu
+2020-12-10 12:25:47,169 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-8] execute view employee datatable
+2020-12-10 12:25:53,586 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-10] employee 8, successfully add training : 3
+2020-12-10 12:26:04,733 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-2] execute view employee datatable
+2020-12-10 12:26:20,386 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-7] execute view employee datatable
+2020-12-10 12:26:21,039 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-8] execute view employee datatable
+2020-12-10 12:26:22,793 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-9] execute view employee datatable
+2020-12-10 12:26:23,341 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-10] execute view employee datatable
+2020-12-10 12:26:23,979 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-1] execute view employee datatable
+2020-12-10 12:26:29,918 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-3] execute view employee datatable
+2020-12-10 12:26:35,135 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-4] execute view employee datatable
+2020-12-10 12:26:36,505 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-2] execute view employee datatable
+2020-12-10 12:28:07,306 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-8] execute view employee datatable
+2020-12-10 12:28:08,420 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-10] execute view employee datatable
+2020-12-10 12:28:08,896 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-3] execute view employee datatable
+2020-12-10 12:28:09,183 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-2] execute view employee datatable
+2020-12-10 12:28:09,336 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-6] execute view employee datatable
+2020-12-10 12:28:09,502 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-8] execute view employee datatable
+2020-12-10 12:28:09,641 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-10] execute view employee datatable
+2020-12-10 12:28:09,790 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-3] execute view employee datatable
+2020-12-10 12:28:09,917 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-2] execute view employee datatable
+2020-12-10 12:28:10,104 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-6] execute view employee datatable
+2020-12-10 12:28:57,967 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-8] execute view employee datatable
+2020-12-10 12:29:04,310 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-9] execute view employee datatable
+2020-12-10 12:29:04,838 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-10] execute view employee datatable
+2020-12-10 12:29:14,492 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-2] execute view employee datatable
+2020-12-10 13:00:52,227 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-9] execute view employee datatable
+2020-12-10 13:01:08,955 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-1] execute view employee datatable
+2020-12-10 13:01:28,401 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting SamplecrudApplication using Java 1.8.0_60 on arrizaqu-pc with PID 10332 (H:\ProjectTest\projectcode\samplecrud\target\classes started by arrizaqu in H:\ProjectTest\projectcode\samplecrud)
+2020-12-10 13:01:28,404 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.4.0, Spring v5.3.1
+2020-12-10 13:01:28,404 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-12-10 13:01:31,355 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-10 13:01:31,638 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SamplecrudApplication in 3.505 seconds (JVM running for 4.664)
+2020-12-10 13:01:32,365 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-2] execute view employee datatable
+2020-12-10 13:25:21,128 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting SamplecrudApplication using Java 1.8.0_60 on arrizaqu-pc with PID 4240 (H:\ProjectTest\projectcode\samplecrud\target\classes started by arrizaqu in H:\ProjectTest\projectcode\samplecrud)
+2020-12-10 13:25:21,130 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.4.0, Spring v5.3.1
+2020-12-10 13:25:21,131 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-12-10 13:25:23,875 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-10 13:25:24,143 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SamplecrudApplication in 3.262 seconds (JVM running for 4.35)
+2020-12-10 13:25:40,714 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-2] execute view employee datatable
+2020-12-10 13:25:45,872 TRACE com.arrizaqu.samplecrud.service.EmployeeService [http-nio-8080-exec-4] execute method edit() for new employee
+2020-12-10 13:25:45,885 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-4] employee successfully edited Masyda Arrizaqu
+2020-12-10 13:25:45,907 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-5] execute view employee datatable
+2020-12-10 13:25:51,169 TRACE com.arrizaqu.samplecrud.service.EmployeeService [http-nio-8080-exec-7] execute method edit() for new employee
+2020-12-10 13:25:51,174 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-7] employee successfully edited Masyda Arrizaqu
+2020-12-10 13:25:51,191 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-8] execute view employee datatable
+2020-12-10 13:27:07,536 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-2] employee 8, successfully add training : 4
+2020-12-10 13:27:36,913 TRACE com.arrizaqu.samplecrud.service.EmployeeService [http-nio-8080-exec-4] execute method save() for new employee
+2020-12-10 13:27:36,929 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-4] employee successfully saved Panjang
+2020-12-10 13:27:36,947 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-5] execute view employee datatable
+2020-12-10 13:27:47,527 TRACE com.arrizaqu.samplecrud.service.EmployeeService [http-nio-8080-exec-7] execute method edit() for new employee
+2020-12-10 13:27:47,541 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-7] employee successfully edited Panjang
+2020-12-10 13:27:47,555 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-8] execute view employee datatable
+2020-12-10 13:27:53,400 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-9] employee successfully deleted for id : 9
+2020-12-10 13:27:53,416 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-10] execute view employee datatable
+2020-12-10 13:33:49,509 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting SamplecrudApplication using Java 1.8.0_60 on arrizaqu-pc with PID 2412 (H:\ProjectTest\projectcode\samplecrud\target\classes started by arrizaqu in H:\ProjectTest\projectcode\samplecrud)
+2020-12-10 13:33:49,553 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.4.0, Spring v5.3.1
+2020-12-10 13:33:49,553 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-12-10 13:33:52,444 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-10 13:33:52,845 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SamplecrudApplication in 3.586 seconds (JVM running for 4.781)
+2020-12-10 13:34:23,226 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-4] execute view employee datatable
+2020-12-10 13:34:30,662 TRACE com.arrizaqu.samplecrud.service.EmployeeService [http-nio-8080-exec-6] execute method edit() for new employee
+2020-12-10 13:34:30,676 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-6] employee successfully edited Masyda Arrizaqu
+2020-12-10 13:34:30,695 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-7] execute view employee datatable
+2020-12-10 13:34:36,000 TRACE com.arrizaqu.samplecrud.service.EmployeeService [http-nio-8080-exec-9] execute method edit() for new employee
+2020-12-10 13:34:36,006 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-9] employee successfully edited Masyda Arrizaqu
+2020-12-10 13:34:36,024 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-10] execute view employee datatable
+2020-12-10 13:34:42,551 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-2] employee 8, successfully add training : 1
+2020-12-10 13:35:00,164 TRACE com.arrizaqu.samplecrud.service.EmployeeService [http-nio-8080-exec-4] execute method save() for new employee
+2020-12-10 13:35:00,171 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-4] employee successfully saved abc
+2020-12-10 13:35:00,188 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-5] execute view employee datatable
+2020-12-10 13:35:08,532 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-7] employee 9, successfully add training : 1
+2020-12-10 13:35:14,329 TRACE com.arrizaqu.samplecrud.service.EmployeeService [http-nio-8080-exec-10] execute method edit() for new employee
+2020-12-10 13:35:14,337 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-10] employee successfully edited Masyda Arrizaqu
+2020-12-10 13:35:14,353 INFO com.arrizaqu.samplecrud.controller.MainController [http-nio-8080-exec-1] execute view employee datatable
